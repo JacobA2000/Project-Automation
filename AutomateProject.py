@@ -50,4 +50,4 @@ if "message" in rJson:
 else:
     #Call our gitclone shell script to clone the project to the users project folder
     print(f"\033[92mCloning repo from GitHub to\033[0m \033[96m{projectsDir}{projectName}\033[0m")
-    subprocess.call(["gitclone.sh", projectsDir, rJson["clone_url"]], shell=True)
+    subprocess.call(["./gitclone.sh", projectsDir, rJson["clone_url"]], shell=True)
