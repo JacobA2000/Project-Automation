@@ -1,7 +1,11 @@
 # Project-Automation
-**CONFIGURATION INSTRUCTONS**  
-Create a config.json file in the same directory as the AutomateProject.py file, following the template below, but replacing path, username and token with your details.
+**CONFIGURATION INSTRUCTONS:**  
+On the first run the program will ask you for 3 things:  
+1. The directory you want to clone projects to
+1. Your GitHub username
+1. A GitHub personal access token (You can get one here: https://github.com/settings/tokens)
 
+This is done as a config.json file with this structure is created, you can come back and change the details later by editing the file.    
 ```json
 {
     "projectsDir": "path to projects folder",
@@ -10,13 +14,14 @@ Create a config.json file in the same directory as the AutomateProject.py file, 
 }
 ```
 
-*(Currently working on a system where this will be created by the user via the python script using inputs on the first run.)*
+**IF YOU ARE RUNNING LINUX YOU MAY NEED TO RUN:**  
+```
+chmod u+r+x gitclone.sh
+```
+This will ensure the gitclone.sh file has the required permissions.
 
-**IF YOU ARE RUNNING LINUX YOU MAY NEED TO MAKE SURE THE gitclone.sh FILE HAS THE CORRECT PERMS TO RUN**  
-To ensure this is the case run chmod u+r+x gitclone.sh
 
-
-**RUN THE TOOL**  
+**RUN THE TOOL:**  
 Depending on your system you will need to run one of these commands when in the same directory as the AutomateProject.py file.
 ```
 python3 AutomateProject.py

@@ -7,13 +7,23 @@ projectsDir = ""
 gitUsername = ""
 gitToken = ""
 
-#Get config data form config.json file
+if os.path.exists("config.json") == False:
+    print("First Time Setup")
+    projectsPath = input("Projects Path (the path you wish your projects to be cloned to) : ")
+    uname = input("GitHub username : ")
+    token = input("GitHub Token (your GitHub personal access token, you can get one here https://github.com/settings/tokens) : ")
+
+    userConfig = {"projectsDir": projectsPath, "gitUsername": uname, "gitToken": token}
+
+    with open("config.json", "w") as f:
+        json.dump(userConfig, f)
+
+#Get config data from config.json file
 with open("config.json", "r") as f:
     configData = json.load(f)
     projectsDir = configData["projectsDir"]
     gitUsername = configData["gitUsername"]
-    gitToken = configData["gitToken"]
-    
+    gitToken = configData["gitToken"]    
 
 #Get the project name the user wants.
 projectName = input("Project Name: ")
