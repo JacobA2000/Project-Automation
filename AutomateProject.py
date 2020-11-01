@@ -3,18 +3,29 @@ import json
 import subprocess
 import os
 
+#Terminal Colours
+class Color():
+    RED = '\033[91m'
+    GREEN = '\033[92m'
+    CYAN = '\033[96m'
+    ENDC = '\033[0m'
+
 projectsDir = ""
 gitUsername = ""
 gitToken = ""
 
+#Checks if a config file exists
 if os.path.exists("config.json") == False:
+    #If theres no config file create one
     print("First Time Setup")
+    #Get user data to populate config file.
     projectsPath = input("Projects Path (the path you wish your projects to be cloned to) : ")
     uname = input("GitHub username : ")
     token = input("GitHub Token (your GitHub personal access token, you can get one here https://github.com/settings/tokens) : ")
 
     userConfig = {"projectsDir": projectsPath, "gitUsername": uname, "gitToken": token}
 
+    #Create and add data to config file.
     with open("config.json", "w") as f:
         json.dump(userConfig, f)
 
@@ -44,7 +55,7 @@ rJson = json.loads(r.text)
 #Check if there was a response message
 if "message" in rJson:
     msg = rJson["message"]
-    print(f"\033[91mMessage: {msg}\033[0m")
+    print(f"{Color.RED}Message: {msg}{Color.ENDC}")
 
     #Check for any errors
     if "errors" in rJson:
@@ -56,12 +67,12 @@ if "message" in rJson:
 
         errorMsg = errorMsg[:-2]
 
-        print(f"\033[91mErrors: {errorMsg}\033[0m")
+        print(f"{Color.RED}Errors: {errorMsg}{Color.ENDC}")
 
 else:
     #Requires chmod u+r+x gitclone.sh to be run first on linux
     #Call our gitclone shell script to clone the project to the users project folder
-    print(f"\033[92mCloning repo from GitHub to\033[0m \033[96m{projectsDir}{projectName}\033[0m")
+    print(f"{Color.GREEN}Cloning repo from GitHub to{Color.ENDC} {Color.CYAN}{projectsDir}{projectName}{Color.ENDC}")
     
     if os.name == "nt":
         subprocess.call(["gitclone.sh", projectsDir, rJson["clone_url"]], shell=True)
