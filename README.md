@@ -1,5 +1,5 @@
 # Project-Automation
-**CONFIGURATION INSTRUCTONS**
+**CONFIGURATION INSTRUCTONS**  
 Create a config.json file in the same directory as the AutomateProject.py file, following the template below, but replacing path, username and token with your details.
 
 ```json
@@ -12,11 +12,11 @@ Create a config.json file in the same directory as the AutomateProject.py file, 
 
 *(Currently working on a system where this will be created by the user via the python script using inputs on the first run.)*
 
-**IF YOU ARE RUNNING LINUX YOU MAY NEED TO MAKE SURE THE gitclone.sh FILE HAS THE CORRECT PERMS TO RUN**
+**IF YOU ARE RUNNING LINUX YOU MAY NEED TO MAKE SURE THE gitclone.sh FILE HAS THE CORRECT PERMS TO RUN**  
 To ensure this is the case run chmod u+r+x gitclone.sh
 
 
-**RUN THE TOOL**
+**RUN THE TOOL**  
 Depending on your system you will need to run one of these commands when in the same directory as the AutomateProject.py file.
 ```
 python3 AutomateProject.py
