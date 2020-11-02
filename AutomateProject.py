@@ -74,7 +74,10 @@ else:
     #Call our gitclone shell script to clone the project to the users project folder
     print(f"{Color.GREEN}Cloning repo from GitHub to{Color.ENDC} {Color.CYAN}{projectsDir}{projectName}{Color.ENDC}")
     
+    cloneLocation = f"{projectsDir}{rJson['name']}"
+
     if os.name == "nt":
         subprocess.call(["gitclone.sh", projectsDir, rJson["clone_url"]], shell=True)
+        subprocess.Popen(f"explorer /sepearte, {cloneLocation}")
     else:
-        subprocess.call(["./gitclone.sh", projectsDir, rJson["clone_url"]])
+        subprocess.call(["./gitclone.sh", projectsDir, rJson["clone_url"], cloneLocation])
