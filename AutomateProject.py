@@ -13,13 +13,18 @@ class Color():
 
 #Path this file is stored at.
 myPath = os.path.dirname(os.path.abspath(__file__))
+configPath = f"{myPath}\\config.json"
+
+#if not windows presume linux
+if os.name != "nt":
+    configPath = f"{myPath}/config.json"
 
 projectsDir = ""
 gitUsername = ""
 gitToken = ""
 
 #Get config data from config.json file
-with open(f"{myPath}\\config.json", "r") as f:
+with open(configPath, "r") as f:
     configData = json.load(f)
     projectsDir = configData["projectsDir"]
     gitUsername = configData["gitUsername"]

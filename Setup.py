@@ -8,10 +8,19 @@ if os.path.exists("config.json") == False:
     #Get user data to populate config file.
     projectsPath = input("Projects Path (the path you wish your projects to be cloned to) : ")
 
-    if projectsPath.endswith("\\") == False:
-        projectsPath += "\\"
+    if os.name == "nt":
+        if projectsPath.endswith("\\") == False:
+            projectsPath += "\\"
 
-    projectsPath.replace("/", "\\")
+        projectsPath = projectsPath.replace("/", "\\")
+    
+    else:
+        if projectsPath.endswith("/") == False:
+            projectsPath += "/"
+
+        projectsPath = projectsPath.replace("\\", "/")
+
+    print(projectsPath)
 
     uname = input("GitHub username : ")
     token = input("GitHub Token (your GitHub personal access token, you can get one here https://github.com/settings/tokens) : ")
