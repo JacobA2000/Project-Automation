@@ -1,5 +1,7 @@
 # Project-Automation
 **CONFIGURATION INSTRUCTONS:**  
+**You will need to setup a ssh key for your device to access GitHub**, details on this can be found here: [GitHub SSH Setup](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)  
+
 On the first run the program will ask you for 3 things:  
 1. The directory you want to clone projects to
 1. Your GitHub username
