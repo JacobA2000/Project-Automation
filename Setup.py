@@ -11,6 +11,8 @@ if os.path.exists("config.json") == False:
     if projectsPath.endswith("\\") == False:
         projectsPath += "\\"
 
+    projectsPath.replace("/", "\\")
+
     uname = input("GitHub username : ")
     token = input("GitHub Token (your GitHub personal access token, you can get one here https://github.com/settings/tokens) : ")
 
