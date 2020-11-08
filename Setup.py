@@ -27,9 +27,9 @@ if os.name == "nt":
         #Create bat file to run quickly on windows.
         with open("createproj.bat", "w") as batf:
             batf.write(f"py \"{os.getcwd()}\\AutomateProject.py\"")
-            
+
 else:
     if os.path.exists("createproj.sh") == False:
         #Create bat file to run quickly on windows.
         with open("createproj.sh", "w") as batf:
-            batf.write(f"python3 \"{os.getcwd()}\\AutomateProject.py\"")
+            batf.write(f"python3 \"{os.getcwd()}/AutomateProject.py\"")
