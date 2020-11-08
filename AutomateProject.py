@@ -77,7 +77,7 @@ else:
     cloneLocation = f"{projectsDir}{rJson['name']}"
 
     if os.name == "nt":
-        subprocess.call(["gitclone.sh", projectsDir, rJson["clone_url"]], shell=True)
+        subprocess.call(["gitclone.sh", projectsDir, rJson["ssh_url"]], shell=True)
         subprocess.Popen(f"explorer /sepearte, {cloneLocation}")
     else:
-        subprocess.call(["./gitclone.sh", projectsDir, rJson["clone_url"], cloneLocation])
+        subprocess.call(["./gitclone.sh", projectsDir, rJson["ssh_url"]])
