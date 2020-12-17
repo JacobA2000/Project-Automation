@@ -11,6 +11,10 @@
 
 
 ## Configuration:
+**REQUIRES REQUESTS PYTHON MODULE**
+```
+pip install requests
+```
 **CONFIGURATION INSTRUCTONS:**  
 **You will need to setup a ssh key for your device to access GitHub**, details on this can be found here: [GitHub SSH Setup](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/connecting-to-github-with-ssh)  
 
